@@ -173,10 +173,16 @@ func openDB():
 func _on_comuneNascita_item_selected(_id):
 	generaCF()
 
-func _on_nome_text_changed(_new_text):
+func _on_nome_text_changed(new_text):
+	var curpos = $nome.get_cursor_position() # posizione cursore
+	$nome.set_text(new_text.to_upper())	  # tutto maiuscolo
+	$nome.set_cursor_position(curpos)		  # ripristina cursore all'ultima posizione
 	generaCF()
 
-func _on_cognome_text_changed(_new_text):
+func _on_cognome_text_changed(new_text):
+	var curpos = $cognome.get_cursor_position() # posizione cursore
+	$cognome.set_text(new_text.to_upper())	  # tutto maiuscolo
+	$cognome.set_cursor_position(curpos)		  # ripristina cursore all'ultima posizione
 	generaCF()
 		
 func _on_dataNascita_text_changed(_new_text):
